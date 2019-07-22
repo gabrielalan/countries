@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/gabrielalan/countries.svg?branch=master)](https://travis-ci.org/gabrielalan/countries)
+
 ## Available Scripts
 
 This project was created with [Create React App](https://github.com/facebook/create-react-app).
