@@ -6,7 +6,7 @@ import { ApolloProvider } from "react-apollo";
 import { BrowserRouter, Route, Redirect, Switch } from 'react-router-dom';
 import client from './api/client';
 import pages from './components/pages';
-import Routes from './routes';
+import Routes from './components/routing/routes';
 
 import './index.scss';
 

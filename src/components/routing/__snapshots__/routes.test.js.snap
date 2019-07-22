@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`routes should render pages correctly secured 1`] = `
+Array [
+  <span>
+    Page
+  </span>,
+  <div
+    className="redirect"
+  />,
+]
+`;
