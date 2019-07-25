@@ -1,0 +1,87 @@
+$grid-gutter: 1rem;
+$grid-count: 12;
+
+@mixin flex {
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+.layout-grid {
+  @include flex;
+
+  flex-wrap: wrap;
+
+  &--max-width {
+    @include medium {
+      max-width: #{map-get($breakpoints, 'large')};
+      margin: 0 auto;
+    }
+
+    @include large {
+      max-width: $site-max-width;
+      margin: 0 auto;
+    }
+  }
+
+  &--gutter {
+    padding: 0 gap(2);
+
+    &-full {
+      padding: 0 gap(2);
+    }
+
+    &-items {
+      padding: 0 gap(2);
+    }
+  }
+
+  &__item {
+    padding-bottom: 2px;
+    padding-right: 2px;
+    flex: 1;
+    align-self: inherit;
+
+    &--auto {
+      flex: 0 1 auto;
+    }
+  }
+
+  &--end {
+    justify-content: flex-end;
+  }
+
+  &--center {
+    justify-content: center;
+  }
+}
+
+@for $i from 1 through $grid-count {
+  .layout-grid__item--#{$i} {
+    $width: percentage(($i / 12));
+
+    flex: 0 1 $width;
+    max-width: $width;
+  }
+}
+
+@include medium {
+  @for $i from 1 through $grid-count {
+    .layout-grid__item--medium-#{$i} {
+      $width: percentage(($i / 12));
+
+      flex: 0 1 $width;
+      max-width: $width;
+    }
+  }
+}
+
+@include large {
+  @for $i from 1 through $grid-count {
+    .layout-grid__item--large-#{$i} {
+      $width: percentage(($i / 12));
+
+      flex: 0 1 $width;
+      max-width: $width;
+    }
+  }
+}

@@ -1,0 +1,31 @@
+$pallete: (
+  pale-spring-bud: #DEEFB7,
+  teal-deer: #98DFAF,
+  green-sheen: #5FB49C,
+  dark-slate-blue: #414288,
+  platinate-purple: #682D63,
+  seashell: #FCEFEF,
+  pearl-aqua: #7FD8BE,
+  magic-mint: #A1FCDF,
+  tuscan: #FCD29F,
+  sunglow: #FFD23F,
+  paradise-pink: #EE4266,
+);
+
+$colors: (
+  input: (
+    border: #ccc,
+    border--hover: map-get($pallete, 'platinate-purple'),
+    label: darken(map-get($pallete, 'green-sheen'), 10%)
+  ),
+  button: (
+    default: map-get($pallete, 'green-sheen'),
+    primary: map-get($pallete, 'dark-slate-blue'),
+    secondary: map-get($pallete, 'teal-deer'),
+    warning: map-get($pallete, 'sunglow'),
+  )
+);
+
+@function color($type, $element) {
+  @return map-deep-get($colors, $type, $element);
+}

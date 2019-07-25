@@ -1,0 +1,53 @@
+@charset 'UTF-8';
+
+@function map-deep-get($map, $keys...) {
+  @each $key in $keys {
+      $map: map-get($map, $key);
+  }
+
+  @return $map;
+}
+
+@function rem($pixels, $context: $base-font-size) {
+  @if (unitless($pixels)) {
+    $pixels: $pixels * 1px;
+  }
+
+  @if (unitless($context)) {
+    $context: $context * 1px;
+  }
+
+  @return $pixels / $context * 1rem;
+}
+
+@function gap($amount) {
+  $gap: $baseWhitespace * $amount;
+
+  @return rem($gap);
+}
+
+@function css-direction($direction) {
+  $_direction: null;
+
+  @if $direction == top {
+    $_direction: 't';
+  }
+
+  @else if $direction == right {
+    $_direction: 'r';
+  }
+
+  @else if $direction == bottom {
+    $_direction: 'b';
+  }
+
+  @else if $direction == left {
+    $_direction: 'l';
+  }
+
+  @else {
+    $_direction: '';
+  }
+
+  @return $_direction;
+}

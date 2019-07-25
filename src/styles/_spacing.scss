@@ -1,0 +1,76 @@
+@mixin _generate-gaps($type, $direction:null, $suffix:null) {
+  $shortType: null;
+  $shortDirection: css-direction($direction);
+
+  $_suffix: null;
+
+  @if ($suffix !=null) {
+    $_suffix: "-#{$suffix}";
+  }
+
+  @if $type == 'padding' {
+    $shortType: 'p';
+  }
+
+  @else {
+    $shortType: 'm';
+  }
+
+  @for $i from 0 through 20 {
+    $_value: $i * $baseWhitespace;
+
+    .s-#{$shortType}#{$shortDirection}--#{$i}#{$_suffix} {
+      @if ($direction) {
+        #{$type}-#{$direction}: rem($_value) !important;
+      }
+
+      @else {
+        #{$type}: rem($_value) !important;
+      }
+    }
+  }
+}
+
+@include _generate-gaps('padding');
+@include _generate-gaps('margin');
+@include _generate-gaps('padding', 'top');
+@include _generate-gaps('padding', 'right');
+@include _generate-gaps('padding', 'bottom');
+@include _generate-gaps('padding', 'left');
+@include _generate-gaps('margin', 'top');
+@include _generate-gaps('margin', 'right');
+@include _generate-gaps('margin', 'bottom');
+@include _generate-gaps('margin', 'left');
+
+@include small-only {
+  @include _generate-gaps('padding', 'top','small');
+  @include _generate-gaps('padding', 'right','small');
+  @include _generate-gaps('padding', 'bottom','small');
+  @include _generate-gaps('padding', 'left','small');
+  @include _generate-gaps('margin', 'top','small');
+  @include _generate-gaps('margin', 'right','small');
+  @include _generate-gaps('margin', 'bottom','small');
+  @include _generate-gaps('margin', 'left','small');
+}
+
+@include medium {
+  @include _generate-gaps('padding', 'top','medium');
+  @include _generate-gaps('padding', 'right','medium');
+  @include _generate-gaps('padding', 'bottom','medium');
+  @include _generate-gaps('padding', 'left','medium');
+  @include _generate-gaps('margin', 'top','medium');
+  @include _generate-gaps('margin', 'right','medium');
+  @include _generate-gaps('margin', 'bottom','medium');
+  @include _generate-gaps('margin', 'left','medium');
+}
+
+@include large {
+  @include _generate-gaps('padding', 'top','large');
+  @include _generate-gaps('padding', 'right','large');
+  @include _generate-gaps('padding', 'bottom','large');
+  @include _generate-gaps('padding', 'left','large');
+  @include _generate-gaps('margin', 'top','large');
+  @include _generate-gaps('margin', 'right','large');
+  @include _generate-gaps('margin', 'bottom','large');
+  @include _generate-gaps('margin', 'left','large');
+}

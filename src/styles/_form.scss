@@ -1,0 +1,52 @@
+.form-group {
+  border: 1px solid color('input', 'border');
+  margin-bottom: gap(2);
+  border-radius: 5px;
+  display: flex;
+  position: relative;
+
+  &--label {
+    display: block;
+    position: absolute;
+    left: gap(2);
+    top: gap(1);
+    font-size: 0.8rem;
+    color: color('input', 'label')
+  }
+
+  &--input {
+    font-weight: 300;
+    line-height: initial;
+    margin: gap(2) 0 0;
+    padding: 0 gap(2);
+    font-size: 1.2rem;
+    flex: 0 1 auto;
+    border: 0;
+    background: 0 0;
+    min-width: 0;
+    outline: 0;
+    height: 3rem;
+    width: 100%;
+    color: #333;
+  }
+}
+
+.form-multiple-groups {
+  box-shadow: 0px 0px 20px rgba(0,0,0,0.15);
+  border-radius: 5px;
+  margin-bottom: gap(2);
+
+  .form-group {
+    margin: 0;
+    border-bottom: none;
+
+    &:first-child {
+      border-radius: 5px 5px 0 0;
+    }
+
+    &:last-child {
+      border-radius: 0 0 5px 5px;
+      border-bottom: 1px solid color('input', 'border');
+    }
+  }
+}

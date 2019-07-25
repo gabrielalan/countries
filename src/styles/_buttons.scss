@@ -1,0 +1,43 @@
+.btn {
+  background: white;
+  border: 2px solid white;
+  line-height: 1.5;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  font-weight: 700;
+  text-align: center;
+  text-transform: uppercase;
+  padding: 0 2rem;
+  border-width: 0;
+  min-height: 45px;
+  border-radius: 50px;
+  color: color('button', 'default');
+  text-decoration: none;
+  cursor: pointer;
+
+  @each $name, $color in map-get($colors, 'button') {
+    &.btn--#{$name} {
+      background-color: $color;
+      border: 2px solid $color;
+      color: white;
+    }
+
+    &.btn--#{$name}:hover, &.btn--#{$name}:focus {
+      background-color: lighten($color: $color, $amount: $button-hover-percentage);
+      border-color: lighten($color: $color, $amount: $button-hover-percentage);
+    }
+
+    &.btn--#{$name}--outline {
+      background-color: transparent;
+      color: $color;
+      border: 2px solid $color;
+    }
+
+    &.btn--#{$name}--outline:hover, &.btn--#{$name}--outline:focus {
+      color: white;
+      background-color: $color;
+    }
+  }
+}
