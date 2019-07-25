@@ -23,6 +23,10 @@ $colors: (
     primary: map-get($pallete, 'dark-slate-blue'),
     secondary: map-get($pallete, 'teal-deer'),
     warning: map-get($pallete, 'sunglow'),
+  ),
+  alert: (
+    text: #333,
+    background: map-get($pallete, 'sunglow')
   )
 );
 

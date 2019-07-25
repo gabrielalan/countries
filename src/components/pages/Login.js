@@ -1,29 +1,35 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { Link, Redirect } from 'react-router-dom';
+import LoginForm from '../presentational/forms/LoginForm';
 
-export default function Home() {
+const ErrorMessage = () => <p className="alert">
+  Username not found. If you don't have an account you can <Link to="register">register clicking the button</Link> below.
+</p>;
+
+function Home({ isUserLoggedIn, error, performLogin }) {
+  if (isUserLoggedIn) {
+    return <Redirect to="/" />
+  }
+
   return <div className="layout-grid layout-grid--max-width layout-grid--center s-mt--20">
     <div className="layout-grid__item--6">
       <h1>Log into your account</h1>
 
-      <form action="#">
-        <div className="form-multiple-groups s-mt--6">
-          <div className="form-group">
-            <label htmlFor="username" className="form-group--label">Username</label>
-            <input id="username" type="text" className="form-group--input" autoComplete="off" />
-          </div>
+      {!!error ? <ErrorMessage /> : null}
 
-          <div className="form-group">
-            <label htmlFor="password" className="form-group--label">Password</label>
-            <input id="password" type="password" className="form-group--input" />
-          </div>
-        </div>
-        
-        <div className="align-center s-mt--6">
-          <button type="submit" className="btn btn--primary s-mr--2">login</button>
-          <Link to="/register" className="btn btn--default--outline">register</Link>
-        </div>
-      </form>
+      <LoginForm onLogin={performLogin} />
     </div>
   </div>;
 }
+
+const mapStateToProps = state => ({
+  isUserLoggedIn: !!state.user.loggedInUser,
+  error: state.user.error
+});
+
+const mapDispatchToProps = dispatch => ({
+  performLogin: (user) => dispatch({ type: 'USER_LOGIN', user })
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Home);

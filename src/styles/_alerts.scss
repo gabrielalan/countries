@@ -1,0 +1,6 @@
+.alert {
+  background-color: color('alert', 'background');
+  color: color('alert', 'text');
+  border-radius: 5px;
+  padding: gap(4);
+}

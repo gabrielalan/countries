@@ -1,10 +1,9 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
-function withSecurity(Route, Redirect) {
-  const isLoggedIn = false;
-
+function withSecurity(authenticated, Route, Redirect) {
   const createRenderer = (Component, isPrivate) => props =>
-    !isPrivate || isLoggedIn ? (
+    !isPrivate || authenticated ? (
       <Component {...props} />
     ) : (
       <Redirect to={{
@@ -20,12 +19,19 @@ function withSecurity(Route, Redirect) {
     />;
 }
 
-export default function Routes({Router, Route, Redirect, Switch, pages}) {
-  const SecuredRoute = withSecurity(Route, Redirect);
+function Routes({isUserLoggedIn, Router, Route, Redirect, Switch, pages}) {
+  const SecuredRoute = withSecurity(isUserLoggedIn, Route, Redirect);
 
   return <Router>
-    <Switch>{
-      pages.map(props => <SecuredRoute key={props.path} {...props} />)
-    }</Switch>
+    <Switch>
+      {pages.map(props => <SecuredRoute key={props.path} {...props} />)}
+      <Route render={() => <Redirect to="/" />} />
+    </Switch>
   </Router>;
 }
+
+const mapStateToProps = state => ({
+  isUserLoggedIn: !!state.user.loggedInUser
+});
+
+export default connect(mapStateToProps)(Routes);
