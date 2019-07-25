@@ -1,0 +1,20 @@
+@import '../../../styles/base';
+
+.navbar {
+  background-color: color('navbar', 'background');
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: gap(2);
+
+  &__logo {
+    margin: 0;
+    color: white;
+  }
+
+  &__right-side {
+    display: flex;
+    align-items: center;
+    color: white;
+  }
+}

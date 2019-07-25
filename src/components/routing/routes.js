@@ -19,8 +19,12 @@ function withSecurity(authenticated, Route, Redirect) {
     />;
 }
 
-function Routes({isUserLoggedIn, Router, Route, Redirect, Switch, pages}) {
+function Routes({isUserLoggedIn, isAppLoading, Router, Route, Redirect, Switch, pages}) {
   const SecuredRoute = withSecurity(isUserLoggedIn, Route, Redirect);
+
+  if (isAppLoading) {
+    return <p>Loading</p>;
+  }
 
   return <Router>
     <Switch>
@@ -31,7 +35,8 @@ function Routes({isUserLoggedIn, Router, Route, Redirect, Switch, pages}) {
 }
 
 const mapStateToProps = state => ({
-  isUserLoggedIn: !!state.user.loggedInUser
+  isUserLoggedIn: !!state.user.loggedInUser,
+  isAppLoading: state.user.checkingLogin
 });
 
 export default connect(mapStateToProps)(Routes);

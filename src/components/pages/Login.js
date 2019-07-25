@@ -13,19 +13,19 @@ function Home({ isUserLoggedIn, error, performLogin }) {
   }
 
   return <div className="layout-grid layout-grid--max-width layout-grid--center s-mt--20">
-    <div className="layout-grid__item--6">
+    <div className="layout-grid__item--11 layout-grid__item--medium-6">
       <h1>Log into your account</h1>
 
       {!!error ? <ErrorMessage /> : null}
 
-      <LoginForm onLogin={performLogin} />
+      <LoginForm submitLabel="login" onLogin={performLogin} useRegisterButton/>
     </div>
   </div>;
 }
 
 const mapStateToProps = state => ({
   isUserLoggedIn: !!state.user.loggedInUser,
-  error: state.user.error
+  error: state.user.loginError
 });
 
 const mapDispatchToProps = dispatch => ({

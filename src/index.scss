@@ -1,9 +1,6 @@
-@import './styles/settings';
-@import './styles/functions';
-@import './styles/breakpoints';
-@import './styles/spacing';
-@import './styles/colors';
+@import './styles/base';
 
+// global/generic styles
 @import './styles/alerts';
 @import './styles/buttons';
 @import './styles/form';

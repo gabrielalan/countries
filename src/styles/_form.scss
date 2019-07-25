@@ -5,7 +5,17 @@
   display: flex;
   position: relative;
 
-  &--label {
+  &--invalid {
+    .form-group__label {
+      color: color('input', 'error');  
+    }
+
+    .form-group__error {
+      display: block;
+    }
+  }
+
+  &__label {
     display: block;
     position: absolute;
     left: gap(2);
@@ -14,7 +24,20 @@
     color: color('input', 'label')
   }
 
-  &--input {
+  &__error {
+    position: absolute;
+    right: gap(2);
+    padding: gap(2);
+    top: 30%;
+    font-size: 1rem;
+    line-height: 4px;
+    color: white;
+    background-color: color('input', 'error');
+    border-radius: 50px;
+    display: none;
+  }
+
+  &__input {
     font-weight: 300;
     line-height: initial;
     margin: gap(2) 0 0;
@@ -31,7 +54,7 @@
   }
 }
 
-.form-multiple-groups {
+.form-column-groups {
   box-shadow: 0px 0px 20px rgba(0,0,0,0.15);
   border-radius: 5px;
   margin-bottom: gap(2);

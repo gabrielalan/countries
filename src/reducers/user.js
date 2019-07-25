@@ -1,16 +1,29 @@
 
 export const initialState = {
   loggedInUser: undefined,
-  error: undefined,
+  loginError: undefined,
+  registrationError: undefined,
+  checkingLogin: false,
 };
 
 export default function userReducer(state = {}, action) {
   switch (action.type) {
+    case 'APP_STARTED':
+      return { ...state, checkingLogin: true };
+
+    case 'USER_CHECKED':
     case 'USER_LOGIN_SUCCEEDED':
-      return { loggedInUser: action.user };
+    case 'USER_REGISTER_SUCCEEDED':
+      return { loggedInUser: action.user, checkingLogin: false };
 
     case 'USER_LOGIN_FAILED':
-      return { ...state, error: action.message };
+      return { ...state, loginError: action.message, checkingLogin: false };
+
+    case 'USER_REGISTER_FAILED':
+      return { ...state, registrationError: action.message, checkingLogin: false };
+
+    case 'USER_LOGOUT_SUCCEEDED':
+      return initialState;
 
     default:
       return state;

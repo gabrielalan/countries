@@ -1,6 +1,6 @@
 .btn {
-  background: white;
-  border: 2px solid white;
+  background: transparent;
+  border: 2px solid transparent;
   line-height: 1.5;
   display: inline-flex;
   align-items: center;
@@ -38,6 +38,15 @@
     &.btn--#{$name}--outline:hover, &.btn--#{$name}--outline:focus {
       color: white;
       background-color: $color;
+    }
+  }
+
+  &--prefixed {
+    padding: 0 0.8rem 0 0.5rem;
+
+    &__picture {
+      width: 30px;
+      margin-right: 10px;
     }
   }
 }

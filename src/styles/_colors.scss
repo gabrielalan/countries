@@ -16,7 +16,8 @@ $colors: (
   input: (
     border: #ccc,
     border--hover: map-get($pallete, 'platinate-purple'),
-    label: darken(map-get($pallete, 'green-sheen'), 10%)
+    label: darken(map-get($pallete, 'green-sheen'), 10%),
+    error: map-get($pallete, 'paradise-pink')
   ),
   button: (
     default: map-get($pallete, 'green-sheen'),
@@ -27,6 +28,9 @@ $colors: (
   alert: (
     text: #333,
     background: map-get($pallete, 'sunglow')
+  ),
+  navbar: (
+    background: map-get($pallete, 'platinate-purple')
   )
 );
 
