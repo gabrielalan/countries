@@ -7,11 +7,13 @@ const isEmpty = value => !value && value !== 0 ? { required: true } : null;
 export default function LoginForm({ onLogin, submitLabel, useRegisterButton }) {
   const [user, setUser] = useInputState('', [isEmpty]);
   const [password, setPassword] = useInputState('', [isEmpty]);
+
+  const hasErrors = () => !!user.errors.length || !!password.errors.length;
   
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    if (!!user.errors.length || !!password.errors.length) {
+    if (hasErrors()) {
       return false;
     }
 
@@ -39,7 +41,7 @@ export default function LoginForm({ onLogin, submitLabel, useRegisterButton }) {
     </div>
     
     <div className="align-center s-mt--6">
-      <button type="submit" className="btn btn--primary s-mr--2">{submitLabel}</button>
+      <button type="submit" className="btn btn--primary s-mr--2" disabled={hasErrors()}>{submitLabel}</button>
       {useRegisterButton ? <Link to="/register" className="btn btn--default--outline">register</Link> : null}
     </div>
   </form>;

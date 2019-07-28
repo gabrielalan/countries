@@ -1,5 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`routes should render loading if its loading 1`] = `
+<p>
+  Loading
+</p>
+`;
+
 exports[`routes should render pages correctly secured 1`] = `
 Array [
   <span>
@@ -7,6 +13,15 @@ Array [
   </span>,
   <div
     className="redirect"
-  />,
+  >
+    {"pathname":"/login","state":{}}
+     - 
+  </div>,
+  <div
+    className="redirect"
+  >
+    "/"
+     - 
+  </div>,
 ]
 `;

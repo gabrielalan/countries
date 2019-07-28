@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TextCell should render numbers normally 1`] = `"2.4"`;
+
+exports[`TextCell should render text normally 1`] = `"text"`;
+
+exports[`TextCell should represent lists without errors 1`] = `"1,text,[object Object]"`;
+
+exports[`TextCell should represent objects without errors 1`] = `"[object Object]"`;
+
+exports[`TextCell should throw errors when children is null 1`] = `null`;

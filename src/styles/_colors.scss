@@ -13,7 +13,11 @@ $pallete: (
 );
 
 $colors: (
+  body: (
+    background: map-get($pallete, 'seashell')
+  ),
   input: (
+    background: white,
     border: #ccc,
     border--hover: map-get($pallete, 'platinate-purple'),
     label: darken(map-get($pallete, 'green-sheen'), 10%),
