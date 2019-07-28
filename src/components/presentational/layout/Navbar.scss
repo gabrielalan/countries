@@ -5,14 +5,15 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: gap(2);
+  padding: gap(2) gap(2) gap(30);
+  margin-bottom: -(gap(15));
 
   &__logo {
     margin: 0;
     color: white;
   }
 
-  &__right-side {
+  &__right-section {
     display: flex;
     align-items: center;
     color: white;

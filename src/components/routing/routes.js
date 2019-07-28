@@ -19,7 +19,7 @@ function withSecurity(authenticated, Route, Redirect) {
     />;
 }
 
-function Routes({isUserLoggedIn, isAppLoading, Router, Route, Redirect, Switch, pages}) {
+export function Routes({isUserLoggedIn, isAppLoading, Router, Route, Redirect, Switch, pages}) {
   const SecuredRoute = withSecurity(isUserLoggedIn, Route, Redirect);
 
   if (isAppLoading) {

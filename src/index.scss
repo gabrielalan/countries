@@ -4,6 +4,7 @@
 @import './styles/alerts';
 @import './styles/buttons';
 @import './styles/form';
+@import './styles/grid';
 @import './styles/layout-grid';
 @import './styles/utilities';
 
@@ -15,6 +16,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-size: $base-font-size;
+  background-color: #f5fffa;
 }
 
 code {

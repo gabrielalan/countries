@@ -40,12 +40,12 @@
   &__input {
     font-weight: 300;
     line-height: initial;
-    margin: gap(2) 0 0;
-    padding: 0 gap(2);
+    padding: gap(2) gap(2) 0;
     font-size: 1.2rem;
     flex: 0 1 auto;
     border: 0;
-    background: 0 0;
+    border-radius: 5px;
+    background: color('input', 'background');
     min-width: 0;
     outline: 0;
     height: 3rem;

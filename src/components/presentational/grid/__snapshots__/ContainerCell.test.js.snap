@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ContainerCell should render correct type 1`] = `
+<div
+  className="column"
+  style={
+    Object {
+      "width": undefined,
+    }
+  }
+>
+  Type === One
+</div>
+`;
+
+exports[`ContainerCell should render correct type 2`] = `
+<div
+  className="column"
+  style={
+    Object {
+      "width": undefined,
+    }
+  }
+>
+  Type === Two
+</div>
+`;
+
+exports[`ContainerCell should set the width 1`] = `
+<div
+  className="column"
+  style={
+    Object {
+      "width": 100,
+    }
+  }
+>
+  check width One
+</div>
+`;

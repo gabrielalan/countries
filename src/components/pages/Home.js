@@ -3,6 +3,51 @@ import { connect } from "react-redux";
 import { Query } from "react-apollo";
 import { getAllCountries } from '../../api/queries/countries';
 import Navbar from '../presentational/layout/Navbar';
+import TextCell from '../presentational/grid/cells/TextCell';
+import Grid from '../presentational/grid/Grid';
+
+const colSpecsForCountries = {
+  emoji: {
+    Type: TextCell,
+    width: 30,
+    label: '#'
+  },
+  code: {
+    Type: TextCell,
+    width: 30,
+    label: '#'
+  },
+  name: {
+    Type: TextCell,
+    width: 200,
+    label: 'Name'
+  },
+  native: {
+    Type: TextCell,
+    width: 200,
+    label: 'Native name'
+  },
+  phone: {
+    Type: TextCell,
+    width: 50,
+    label: 'Phone'
+  },
+  currency: {
+    Type: TextCell,
+    width: 80,
+    label: 'Currency'
+  },
+  continent: {
+    Type: TextCell,
+    width: 85,
+    label: 'Continent'
+  },
+  languages: {
+    Type: TextCell,
+    width: 100,
+    label: 'Languages'
+  },
+};
 
 function Home({ loggedInUser, logOut }) {
   return <>
@@ -12,8 +57,8 @@ function Home({ loggedInUser, logOut }) {
         log out
       </button>
     </Navbar>
-    <div className="layout-grid layout-grid--max-width layout-grid--center s-mt--20">
-      <section className="layout-grid__item--11 layout-grid__item--medium-6">
+    <article className="layout-grid layout-grid--max-width layout-grid--center">
+      <section className="layout-grid__item--11">
         <Query query={getAllCountries}>
           {({loading, error, data}) => {
             if (loading)
@@ -22,11 +67,15 @@ function Home({ loggedInUser, logOut }) {
             if (error) 
               return <p>{error.message}</p>;
 
-            return data.countries.map(country => <p key={country.code}>{country.name}</p>);
+            return <Grid
+              indexColumn="code"
+              columns={colSpecsForCountries}
+              data={data.countries}
+              />
           }}
         </Query>
       </section>
-    </div>
+    </article>
   </>;
 }
 

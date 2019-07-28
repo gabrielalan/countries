@@ -24,7 +24,7 @@
       color: white;
     }
 
-    &.btn--#{$name}:hover, &.btn--#{$name}:focus {
+    &.btn--#{$name}:not(:disabled):hover, &.btn--#{$name}:not(:disabled):focus {
       background-color: lighten($color: $color, $amount: $button-hover-percentage);
       border-color: lighten($color: $color, $amount: $button-hover-percentage);
     }
@@ -35,10 +35,15 @@
       border: 2px solid $color;
     }
 
-    &.btn--#{$name}--outline:hover, &.btn--#{$name}--outline:focus {
+    &.btn--#{$name}--outline:not(:disabled):hover, &.btn--#{$name}--outline:not(:disabled):focus {
       color: white;
       background-color: $color;
     }
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
   }
 
   &--prefixed {

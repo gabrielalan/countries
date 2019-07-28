@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ResizableHeader should set new width after drag 1`] = `
+<div
+  className="column"
+  style={
+    Object {
+      "width": 100,
+    }
+  }
+>
+  text
+  <span
+    className="resizer"
+    draggable={true}
+    onDrag={[Function]}
+    onDragEnd={[Function]}
+    onDragStart={[Function]}
+  />
+</div>
+`;
+
+exports[`ResizableHeader should set new width after drag 2`] = `
+<div
+  className="column"
+  style={
+    Object {
+      "width": 150,
+    }
+  }
+>
+  text
+  <span
+    className="resizer"
+    draggable={true}
+    onDrag={[Function]}
+    onDragEnd={[Function]}
+    onDragStart={[Function]}
+  />
+</div>
+`;
