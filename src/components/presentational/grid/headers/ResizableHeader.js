@@ -43,13 +43,13 @@ export default function ResizableHeader({ children, onResize, initialWidth }) {
     });
   };
 
-  return <div ref={div} className="column" style={{ width }}>
+  return <div ref={div} className="grid__row__column" style={{ width }}>
     {children}
     <span
       onDragStart={onDragStart}
       onDragEnd={() => onResize(width)}
       onDrag={onDrag}
-      className="resizer"
+      className="grid__row__column__resizer"
       draggable />
   </div>;
 }

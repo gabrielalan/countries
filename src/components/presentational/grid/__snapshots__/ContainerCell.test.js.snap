@@ -2,7 +2,7 @@
 
 exports[`ContainerCell should render correct type 1`] = `
 <div
-  className="column"
+  className="grid__row__column"
   style={
     Object {
       "width": undefined,
@@ -15,7 +15,7 @@ exports[`ContainerCell should render correct type 1`] = `
 
 exports[`ContainerCell should render correct type 2`] = `
 <div
-  className="column"
+  className="grid__row__column"
   style={
     Object {
       "width": undefined,
@@ -28,7 +28,7 @@ exports[`ContainerCell should render correct type 2`] = `
 
 exports[`ContainerCell should set the width 1`] = `
 <div
-  className="column"
+  className="grid__row__column"
   style={
     Object {
       "width": 100,
