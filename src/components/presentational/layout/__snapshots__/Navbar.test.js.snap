@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Navbar should render text normally 1`] = `
+<header
+  className="navbar"
+>
+  <h1
+    className="navbar__logo"
+  >
+    FancyCountries
+  </h1>
+  <section
+    className="navbar__right-section"
+  >
+    inside the right section
+  </section>
+</header>
+`;

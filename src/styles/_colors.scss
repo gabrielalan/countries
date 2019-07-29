@@ -33,6 +33,9 @@ $colors: (
     text: #333,
     background: map-get($pallete, 'sunglow')
   ),
+  grid: (
+    header-background: #eee
+  ),
   navbar: (
     background: map-get($pallete, 'platinate-purple')
   )

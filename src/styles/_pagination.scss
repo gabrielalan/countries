@@ -1,0 +1,46 @@
+.pagination {
+  width: 100%;
+
+  &__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: gap(2);
+    margin: 0;
+  }
+
+  &__page {
+    list-style: none;
+    margin: gap(0.5);
+
+    button {
+      background: 0 0;
+      border: 2px solid map-get($pallete, 'green-sheen');
+      border-radius: 3px;
+      padding: gap(1) gap(2);
+      background-color: map-get($pallete, 'green-sheen');
+      color: white;
+      font-size: 1.2rem;
+      text-transform: uppercase;
+
+      &:hover {
+        border-color: lighten(map-get($pallete, 'green-sheen'), 10%);
+        background-color: lighten(map-get($pallete, 'green-sheen'), 10%);
+        cursor: pointer;
+      }
+    }
+
+    &--disabled button, &--disabled button:hover {
+      cursor: initial;
+      border-color: lighten(map-get($pallete, 'green-sheen'), 30%);
+      background-color: lighten(map-get($pallete, 'green-sheen'), 30%);
+    }
+
+    &--current button, &--current button:hover {
+      cursor: initial;
+      border-color: darken(map-get($pallete, 'green-sheen'), 30%);
+      background-color: darken(map-get($pallete, 'green-sheen'), 30%);
+    }
+  }
+}

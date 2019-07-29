@@ -2,7 +2,7 @@
 
 exports[`ResizableHeader should set new width after drag 1`] = `
 <div
-  className="column"
+  className="grid__row__column"
   style={
     Object {
       "width": 100,
@@ -11,7 +11,7 @@ exports[`ResizableHeader should set new width after drag 1`] = `
 >
   text
   <span
-    className="resizer"
+    className="grid__row__column__resizer"
     draggable={true}
     onDrag={[Function]}
     onDragEnd={[Function]}
@@ -22,7 +22,7 @@ exports[`ResizableHeader should set new width after drag 1`] = `
 
 exports[`ResizableHeader should set new width after drag 2`] = `
 <div
-  className="column"
+  className="grid__row__column"
   style={
     Object {
       "width": 150,
@@ -31,7 +31,7 @@ exports[`ResizableHeader should set new width after drag 2`] = `
 >
   text
   <span
-    className="resizer"
+    className="grid__row__column__resizer"
     draggable={true}
     onDrag={[Function]}
     onDragEnd={[Function]}
