@@ -23,7 +23,7 @@ const colSpecsForCountries = {
   name: {
     Type: TextCell,
     isHidable: true,
-    width: 400,
+    width: 430,
     label: 'Name (Native name)',
     order: 'ASC',
     isOrdarable: true,

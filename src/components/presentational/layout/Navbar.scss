@@ -8,6 +8,14 @@
   padding: gap(2) gap(2) gap(30);
   margin-bottom: -(gap(15));
 
+  @include small {
+    flex-flow: column;
+  }
+
+  @include medium {
+    flex-flow: row;
+  }
+
   &__logo {
     margin: 0;
     color: white;
@@ -17,5 +25,13 @@
     display: flex;
     align-items: center;
     color: white;
+
+    @include small {
+      margin-top: gap(2);
+    }
+  
+    @include medium {
+      margin-top: 0;
+    }
   }
 }

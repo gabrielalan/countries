@@ -1,13 +1,14 @@
 import React from 'react';
 import { connect } from "react-redux";
 import Grid from '../presentational/grid/Grid';
+import Loading from '../presentational/layout/Loading';
 import Pagination from '../presentational/pagination/Pagination';
 import { createSetPageAction, createHideColumnAction, createSetOrderAction, createLoadDataAction } from '../../reducers/grids';
 
 export function CountriesGrid({ gridSpecs, loadData, hideColumn, setPage, setOrder }) {
   if (!gridSpecs) {
     loadData();
-    return <p>Loading</p>;
+    return <Loading />;
   }
 
   if (gridSpecs && gridSpecs.error) {
@@ -15,7 +16,7 @@ export function CountriesGrid({ gridSpecs, loadData, hideColumn, setPage, setOrd
   }
 
   if (gridSpecs && gridSpecs.isLoading) {
-    return <p>Loading</p>;
+    return <Loading />;
   }
 
   const limit = 10;

@@ -13,9 +13,19 @@ $pallete: (
 );
 
 $colors: (
+  alert: (
+    text: #333,
+    background: map-get($pallete, 'sunglow')
+  ),
   body: (
     background: map-get($pallete, 'seashell'),
     link-color: map-get($pallete, 'dark-slate-blue')
+  ),
+  button: (
+    default: map-get($pallete, 'green-sheen'),
+    primary: map-get($pallete, 'dark-slate-blue'),
+    secondary: map-get($pallete, 'teal-deer'),
+    warning: map-get($pallete, 'sunglow'),
   ),
   input: (
     background: white,
@@ -24,19 +34,12 @@ $colors: (
     label: darken(map-get($pallete, 'green-sheen'), 10%),
     error: map-get($pallete, 'paradise-pink')
   ),
-  button: (
-    default: map-get($pallete, 'green-sheen'),
-    primary: map-get($pallete, 'dark-slate-blue'),
-    secondary: map-get($pallete, 'teal-deer'),
-    warning: map-get($pallete, 'sunglow'),
-  ),
-  alert: (
-    text: #333,
-    background: map-get($pallete, 'sunglow')
-  ),
   grid: (
     header-background: #eee,
     hide-button-background: map-get($pallete, 'green-sheen')
+  ),
+  loading: (
+    wrapper-background: map-get($pallete, 'platinate-purple')
   ),
   navbar: (
     background: map-get($pallete, 'platinate-purple')

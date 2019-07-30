@@ -13,9 +13,22 @@
   &__page {
     list-style: none;
 
+    @include small {
+      &--number {
+        display: none;
+      }
+    }
+
+    @include medium {
+      &--number {
+        display: initial;
+      }
+    }
+
     .btn {
       border-radius: 0;
       border-left-width: 0;
+      font-size: 0.8rem;
     }
 
     &:first-child .btn {

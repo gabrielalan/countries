@@ -20,7 +20,7 @@ exports[`Pagination should render correct number of pages 1`] = `
       </button>
     </li>
     <li
-      className="pagination__page pagination__page--current"
+      className="pagination__page pagination__page--number pagination__page--current"
     >
       <button
         className="btn btn--primary--outline"
@@ -32,7 +32,7 @@ exports[`Pagination should render correct number of pages 1`] = `
       </button>
     </li>
     <li
-      className="pagination__page"
+      className="pagination__page pagination__page--number"
     >
       <button
         className="btn btn--primary--outline"
@@ -54,7 +54,7 @@ exports[`Pagination should render correct number of pages 1`] = `
       </button>
     </li>
     <li
-      className="pagination__page"
+      className="pagination__page pagination__page--number"
     >
       <button
         className="btn btn--primary--outline"
@@ -101,7 +101,7 @@ exports[`Pagination should render correct number of pages 2`] = `
       </button>
     </li>
     <li
-      className="pagination__page pagination__page--current"
+      className="pagination__page pagination__page--number pagination__page--current"
     >
       <button
         className="btn btn--primary--outline"
@@ -113,7 +113,7 @@ exports[`Pagination should render correct number of pages 2`] = `
       </button>
     </li>
     <li
-      className="pagination__page"
+      className="pagination__page pagination__page--number"
     >
       <button
         className="btn btn--primary--outline"
@@ -135,7 +135,7 @@ exports[`Pagination should render correct number of pages 2`] = `
       </button>
     </li>
     <li
-      className="pagination__page"
+      className="pagination__page pagination__page--number"
     >
       <button
         className="btn btn--primary--outline"
