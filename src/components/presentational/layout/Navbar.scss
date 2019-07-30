@@ -6,7 +6,7 @@
   align-items: center;
   justify-content: space-between;
   padding: gap(2) gap(2) gap(30);
-  margin-bottom: -(gap(15));
+  margin-bottom: -(gap(25));
 
   @include small {
     flex-flow: column;

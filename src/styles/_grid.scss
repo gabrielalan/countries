@@ -10,6 +10,14 @@ $resizerWidth: 4px !default;
     display: flex;
     flex-wrap: nowrap;
 
+    &:not(.grid__row--header):not(.grid__row--empty):hover &__column {
+      background-color: color('grid', 'hover-background');
+    }
+
+    &--empty {
+      color: rgb(104, 104, 104);
+    }
+
     &__column {
       border-bottom: 1px solid rgb(221, 221, 221);
       padding: gap(3);

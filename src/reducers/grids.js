@@ -5,6 +5,7 @@ import get from 'lodash/fp/get';
 
 export const gridActionTypes = {
   setPage: 'GRID_SET_PAGE',
+  setFilter: 'GRID_SET_FILTER',
   setOrder: 'GRID_SET_ORDER',
   setColumns: 'GRID_SET_COLUMNS',
   hideColumn: 'GRID_HIDE_COLUMN',
@@ -17,6 +18,7 @@ export const createHideColumnAction = (name, id) => ({ type: gridActionTypes.hid
 export const createSetPageAction = (name, page) => ({ type: gridActionTypes.setPage, page, name });
 export const createSetOrderAction = (name, id, order = 'ASC') => ({ type: gridActionTypes.setOrder, id, order, name });
 export const createSetColumnsAction = (name, columns) => ({ type: gridActionTypes.setColumns, columns, name });
+export const createSetFilterAction = (name, filter) => ({ type: gridActionTypes.setFilter, filter, name });
 
 export const createLoadDataAction = (name) => ({ type: gridActionTypes.loadData, name });
 export const createLoadDataSucceededAction = (name, data) => ({ type: gridActionTypes.loadDataSucceeded, name, data });
@@ -52,6 +54,9 @@ export default function gridsReducer(state = {}, action) {
         set(`${action.name}.error`, action.error),
         set(`${action.name}.isLoading`, false),
       ])(state);
+
+    case gridActionTypes.setFilter:
+      return set(`${action.name}.filter`, action.filter, state);
 
     case gridActionTypes.setPage:
       return set(`${action.name}.currentPage`, action.page, state);

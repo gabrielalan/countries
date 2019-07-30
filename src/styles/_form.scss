@@ -4,6 +4,7 @@
   border-radius: 5px;
   display: flex;
   position: relative;
+  background-color: white;
 
   &--invalid {
     .form-group__label {
@@ -51,6 +52,24 @@
     height: 3rem;
     width: 100%;
     color: #333;
+  }
+
+  &--dark-env {
+    border-color: white;
+  }
+
+  &--has-suffix {
+    .form-group__input {
+      border-radius: 5px 0 0 5px;
+    }
+
+    .form-group__suffix {
+      .btn {
+        border-radius: 0 5px 5px 0;
+        padding-top: gap(2.6);
+        padding-bottom: gap(2.6);
+      }
+    }
   }
 }
 

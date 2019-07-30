@@ -2,6 +2,11 @@
 
 ## Features
 
+### Redux + Saga + Router + GraphQl
+
+The architecture is based on Redux + Redux Saga. Most of the data pass through the reducers and sagas.
+Since the API endpoint is using GraphQL, Apollo was added to handle the queries and fetch.
+
 ### Grid scrolling
 
 The grid will scroll vertically and/or horizontally if needed. The design decision was to keep the column's width fixed so then the scrolling can happen and the space is better used.
@@ -34,6 +39,11 @@ The grid accepts different types of data. At the moment there are 3 different ty
 - `TextCell` - will try to render anything as text
 - `CurrencyRateCell` - will treat the content as a currency KEY and try to get the current rate to show alogn with the key. To use it standalone you will need to pass the `rates` list, but that is covered by using the "container" `CurrencyRate`.
 - `PrimitiveListCell` - a Cell used more for compositions. It will treat the content as a list of any primitive values and render each one with a another given type of Cell (TextCell, CurrencyRateCell... etc)
+
+### Login 
+
+The Login is a simple feature that is working for now with the unsecure local storage method. 
+The user can register and login, all based on local storage only for the purpose of having a login/registration page.
 
 ## Available Scripts
 

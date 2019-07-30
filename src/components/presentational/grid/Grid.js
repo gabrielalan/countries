@@ -18,6 +18,10 @@ const createRowRenderer = (columns, indexColumn, Cell) => {
   </div>;
 };
 
+const emptyRow = <div className="grid__row grid__row grid__row grid__row--empty">
+  <div className="grid__row__column"><i>No items found. Try cleaning the filters.</i></div>
+</div>;
+
 const createInitialDimensions = columnSpecs => Object.keys(columnSpecs).reduce(
   (acc, name) => Object.assign(acc, { [name]: columnSpecs[name].width }),
   {}
@@ -58,7 +62,7 @@ export default function Grid({ indexColumn, columns, data, onColumnHide, onColum
 
   return <section className="grid">
     <div className="grid__row grid__row--header">{headers}</div>
-    {rows}
+    {rows.length ? rows : emptyRow}
   </section>
 }
 

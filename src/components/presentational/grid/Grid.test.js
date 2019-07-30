@@ -43,5 +43,14 @@ describe('Grid', () => {
     ).toJSON();
 
     expect(tree).toMatchSnapshot();
+
+    const emptyGrid = renderer.create(
+      <Grid
+        data={[]}
+        columns={columns}
+        indexColumn="col2" />
+    ).toJSON();
+
+    expect(emptyGrid).toMatchSnapshot();
   });
 });

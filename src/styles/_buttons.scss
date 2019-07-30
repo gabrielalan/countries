@@ -17,6 +17,16 @@
   text-decoration: none;
   cursor: pointer;
 
+  &--iconed {
+    .btn__icon {
+      display: flex;
+
+      svg {
+        width: 1.75rem;
+      }
+    }
+  }
+
   @each $name, $color in map-get($colors, 'button') {
     &.btn--#{$name} {
       background-color: $color;

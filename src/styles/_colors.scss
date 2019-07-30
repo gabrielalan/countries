@@ -36,6 +36,7 @@ $colors: (
   ),
   grid: (
     header-background: #eee,
+    hover-background: lighten(map-get($pallete, 'magic-mint'), 5%),
     hide-button-background: map-get($pallete, 'green-sheen')
   ),
   loading: (
