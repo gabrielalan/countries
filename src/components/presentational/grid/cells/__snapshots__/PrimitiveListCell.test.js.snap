@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PrimitiveListCell should render text normally 1`] = `
+Array [
+  "a",
+  "b",
+  "c",
+]
+`;
+
+exports[`PrimitiveListCell should render text normally 2`] = `
+Array [
+  "1",
+  "2",
+  "3",
+]
+`;

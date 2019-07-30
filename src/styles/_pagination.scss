@@ -12,35 +12,32 @@
 
   &__page {
     list-style: none;
-    margin: gap(0.5);
 
-    button {
-      background: 0 0;
-      border: 2px solid map-get($pallete, 'green-sheen');
-      border-radius: 3px;
-      padding: gap(1) gap(2);
-      background-color: map-get($pallete, 'green-sheen');
-      color: white;
-      font-size: 1.2rem;
-      text-transform: uppercase;
+    .btn {
+      border-radius: 0;
+      border-left-width: 0;
+    }
 
-      &:hover {
-        border-color: lighten(map-get($pallete, 'green-sheen'), 10%);
-        background-color: lighten(map-get($pallete, 'green-sheen'), 10%);
-        cursor: pointer;
-      }
+    &:first-child .btn {
+      border-radius: 50px 0 0 50px;
+      border-left-width: 2px;
+    }
+
+    &:last-child .btn {
+      border-radius: 0 50px 50px 0;
     }
 
     &--disabled button, &--disabled button:hover {
       cursor: initial;
-      border-color: lighten(map-get($pallete, 'green-sheen'), 30%);
-      background-color: lighten(map-get($pallete, 'green-sheen'), 30%);
+      // border-color: lighten(map-get($pallete, 'green-sheen'), 30%);
+      // background-color: lighten(map-get($pallete, 'green-sheen'), 30%);
     }
 
-    &--current button, &--current button:hover {
+    &--current .btn {
       cursor: initial;
-      border-color: darken(map-get($pallete, 'green-sheen'), 30%);
-      background-color: darken(map-get($pallete, 'green-sheen'), 30%);
+      // border-color: darken(map-get($pallete, 'green-sheen'), 30%);
+      background-color: color('button', 'primary');
+      color: white;
     }
   }
 }

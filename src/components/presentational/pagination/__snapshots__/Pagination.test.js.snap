@@ -11,6 +11,7 @@ exports[`Pagination should render correct number of pages 1`] = `
       className="pagination__page pagination__page--disabled"
     >
       <button
+        className="btn btn--primary--outline"
         disabled={true}
         onClick={[Function]}
         type="button"
@@ -22,6 +23,7 @@ exports[`Pagination should render correct number of pages 1`] = `
       className="pagination__page pagination__page--current"
     >
       <button
+        className="btn btn--primary--outline"
         disabled={true}
         onClick={[Function]}
         type="button"
@@ -33,6 +35,7 @@ exports[`Pagination should render correct number of pages 1`] = `
       className="pagination__page"
     >
       <button
+        className="btn btn--primary--outline"
         disabled={false}
         onClick={[Function]}
         type="button"
@@ -41,86 +44,20 @@ exports[`Pagination should render correct number of pages 1`] = `
       </button>
     </li>
     <li
-      className="pagination__page"
+      className="pagination__page pagination__page--disabled"
     >
       <button
-        disabled={false}
-        onClick={[Function]}
-        type="button"
+        className="btn btn--primary--outline"
+        disabled={true}
       >
-        3
+        ...
       </button>
     </li>
     <li
       className="pagination__page"
     >
       <button
-        disabled={false}
-        onClick={[Function]}
-        type="button"
-      >
-        4
-      </button>
-    </li>
-    <li
-      className="pagination__page"
-    >
-      <button
-        disabled={false}
-        onClick={[Function]}
-        type="button"
-      >
-        5
-      </button>
-    </li>
-    <li
-      className="pagination__page"
-    >
-      <button
-        disabled={false}
-        onClick={[Function]}
-        type="button"
-      >
-        6
-      </button>
-    </li>
-    <li
-      className="pagination__page"
-    >
-      <button
-        disabled={false}
-        onClick={[Function]}
-        type="button"
-      >
-        7
-      </button>
-    </li>
-    <li
-      className="pagination__page"
-    >
-      <button
-        disabled={false}
-        onClick={[Function]}
-        type="button"
-      >
-        8
-      </button>
-    </li>
-    <li
-      className="pagination__page"
-    >
-      <button
-        disabled={false}
-        onClick={[Function]}
-        type="button"
-      >
-        9
-      </button>
-    </li>
-    <li
-      className="pagination__page"
-    >
-      <button
+        className="btn btn--primary--outline"
         disabled={false}
         onClick={[Function]}
         type="button"
@@ -132,6 +69,7 @@ exports[`Pagination should render correct number of pages 1`] = `
       className="pagination__page"
     >
       <button
+        className="btn btn--primary--outline"
         disabled={false}
         onClick={[Function]}
         type="button"
@@ -154,6 +92,7 @@ exports[`Pagination should render correct number of pages 2`] = `
       className="pagination__page pagination__page--disabled"
     >
       <button
+        className="btn btn--primary--outline"
         disabled={true}
         onClick={[Function]}
         type="button"
@@ -165,6 +104,7 @@ exports[`Pagination should render correct number of pages 2`] = `
       className="pagination__page pagination__page--current"
     >
       <button
+        className="btn btn--primary--outline"
         disabled={true}
         onClick={[Function]}
         type="button"
@@ -176,6 +116,7 @@ exports[`Pagination should render correct number of pages 2`] = `
       className="pagination__page"
     >
       <button
+        className="btn btn--primary--outline"
         disabled={false}
         onClick={[Function]}
         type="button"
@@ -184,97 +125,20 @@ exports[`Pagination should render correct number of pages 2`] = `
       </button>
     </li>
     <li
-      className="pagination__page"
+      className="pagination__page pagination__page--disabled"
     >
       <button
-        disabled={false}
-        onClick={[Function]}
-        type="button"
+        className="btn btn--primary--outline"
+        disabled={true}
       >
-        3
+        ...
       </button>
     </li>
     <li
       className="pagination__page"
     >
       <button
-        disabled={false}
-        onClick={[Function]}
-        type="button"
-      >
-        4
-      </button>
-    </li>
-    <li
-      className="pagination__page"
-    >
-      <button
-        disabled={false}
-        onClick={[Function]}
-        type="button"
-      >
-        5
-      </button>
-    </li>
-    <li
-      className="pagination__page"
-    >
-      <button
-        disabled={false}
-        onClick={[Function]}
-        type="button"
-      >
-        6
-      </button>
-    </li>
-    <li
-      className="pagination__page"
-    >
-      <button
-        disabled={false}
-        onClick={[Function]}
-        type="button"
-      >
-        7
-      </button>
-    </li>
-    <li
-      className="pagination__page"
-    >
-      <button
-        disabled={false}
-        onClick={[Function]}
-        type="button"
-      >
-        8
-      </button>
-    </li>
-    <li
-      className="pagination__page"
-    >
-      <button
-        disabled={false}
-        onClick={[Function]}
-        type="button"
-      >
-        9
-      </button>
-    </li>
-    <li
-      className="pagination__page"
-    >
-      <button
-        disabled={false}
-        onClick={[Function]}
-        type="button"
-      >
-        10
-      </button>
-    </li>
-    <li
-      className="pagination__page"
-    >
-      <button
+        className="btn btn--primary--outline"
         disabled={false}
         onClick={[Function]}
         type="button"
@@ -286,6 +150,7 @@ exports[`Pagination should render correct number of pages 2`] = `
       className="pagination__page"
     >
       <button
+        className="btn btn--primary--outline"
         disabled={false}
         onClick={[Function]}
         type="button"

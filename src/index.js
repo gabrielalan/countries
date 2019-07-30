@@ -12,6 +12,7 @@ import reducers from './reducers';
 import rootSaga from './sagas';
 import pages from './components/pages';
 import Routes from './components/routing/routes';
+import IconSprite from './components/presentational/icon/IconSprite';
 
 import './index.scss';
 
@@ -29,6 +30,7 @@ sagaMiddleware.run(rootSaga);
 render(
   <ApolloProvider client={client}>
     <Provider store={store}>
+      <IconSprite />
       <Routes
         Router={HashRouter}
         Redirect={Redirect}

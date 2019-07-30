@@ -1,3 +1,5 @@
+$resizerWidth: 4px !default;
+
 .grid {
   overflow: auto;
   border-radius: 5px;
@@ -12,14 +14,31 @@
       border-bottom: 1px solid rgb(221, 221, 221);
       padding: gap(3);
       position: relative;
+      overflow: hidden;
       word-break: break-all;
       flex: 0 0 auto;
+
+      &__hide-button {
+        cursor: pointer;
+        position: absolute;
+        right: $resizerWidth;
+        top: 0;
+        background: color('grid', 'header-background');
+        border: none;
+        color: color('grid', 'hide-button-background');
+        height: 100%;
+        opacity: 0.9;
+
+        &:hover, &:focus {
+          color: black;
+        }
+      }
 
       &__resizer {
         position: absolute;
         right: 0;
         top: 0;
-        width: 4px;
+        width: $resizerWidth;
         height: 100%;
         background-color: rgba(0, 0, 0, 0.08);
         cursor: col-resize;
@@ -31,7 +50,30 @@
 
       .grid__row__column {
         background-color: color('grid', 'header-background');
-        font-weight: 700;
+
+        &__header-label {
+          display: flex;
+          align-items: center;
+          width: 100%;
+          font-weight: 700;
+          background: 0 0;
+          border: none;
+          font-size: 1em;
+          padding: 0;
+          margin: 0;
+
+          &--is-orderable {
+            cursor: pointer;
+          }
+        }
+      }
+
+      .grid__row__column__order {
+        display: flex;
+        
+        svg {
+          width: 20px;
+        }
       }
     }
   }

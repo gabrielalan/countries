@@ -1,4 +1,5 @@
 import React, { useRef, useState } from 'react';
+import { classNames } from '../../../../functions/elementHelpers';
 
 const dragGhostInvisibleImage = new Image();
 dragGhostInvisibleImage.src = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+ip1sAAAAASUVORK5CYII=';
@@ -30,6 +31,11 @@ export default function ResizableHeader({ children, onResize, initialWidth }) {
    */
   const onDrag = e => e.screenX > 0 && setResizedWidth(e.screenX);
 
+  const onDragEnd = () => {
+    onResize(width);
+    setInitials({ width });
+  };
+
   const onDragStart = e => {
     e.dataTransfer.setData('text', ''); // required in some browsers
     e.dataTransfer.setDragImage(dragGhostInvisibleImage, 0, 0);
@@ -43,11 +49,11 @@ export default function ResizableHeader({ children, onResize, initialWidth }) {
     });
   };
 
-  return <div ref={div} className="grid__row__column" style={{ width }}>
+  return <div ref={div} className={classNames({ 'grid__row__column': true, 'grid__row__column--isResizing': !!initials.x })} style={{ width }}>
     {children}
     <span
       onDragStart={onDragStart}
-      onDragEnd={() => onResize(width)}
+      onDragEnd={onDragEnd}
       onDrag={onDrag}
       className="grid__row__column__resizer"
       draggable />

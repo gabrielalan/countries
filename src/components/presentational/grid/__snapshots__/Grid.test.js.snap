@@ -15,7 +15,13 @@ exports[`Grid should render correct number of headers, rows and columns 1`] = `
         }
       }
     >
-      Column 1
+      <button
+        className="grid__row__column__header-label"
+        onClick={[Function]}
+        type="button"
+      >
+        Column 1
+      </button>
       <span
         className="grid__row__column__resizer"
         draggable={true}
@@ -32,7 +38,13 @@ exports[`Grid should render correct number of headers, rows and columns 1`] = `
         }
       }
     >
-      Column 2
+      <button
+        className="grid__row__column__header-label"
+        onClick={[Function]}
+        type="button"
+      >
+        Column 2
+      </button>
       <span
         className="grid__row__column__resizer"
         draggable={true}
@@ -49,7 +61,13 @@ exports[`Grid should render correct number of headers, rows and columns 1`] = `
         }
       }
     >
-      Column 3
+      <button
+        className="grid__row__column__header-label"
+        onClick={[Function]}
+        type="button"
+      >
+        Column 3
+      </button>
       <span
         className="grid__row__column__resizer"
         draggable={true}

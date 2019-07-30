@@ -6,7 +6,7 @@ export const initialState = {
   checkingLogin: false,
 };
 
-export default function userReducer(state = {}, action) {
+export default function userReducer(state = initialState, action) {
   switch (action.type) {
     case 'APP_STARTED':
       return { ...state, checkingLogin: true };

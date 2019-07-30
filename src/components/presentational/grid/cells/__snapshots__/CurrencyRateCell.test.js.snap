@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CurrencyRateCell should render (--) when there is no rate for currency 1`] = `
+<div
+  className="currency-rate"
+>
+  USD
+  <a
+    href="https://www.ecb.europa.eu/stats/policy_and_exchange_rates/euro_reference_exchange_rates/html/index.en.html"
+    target="blank"
+  >
+    (
+    --
+    )
+  </a>
+</div>
+`;
+
+exports[`CurrencyRateCell should render the rate together with the currency 1`] = `
+<div
+  className="currency-rate"
+>
+  USD
+  <a
+    href="https://www.ecb.europa.eu/stats/policy_and_exchange_rates/euro_reference_exchange_rates/html/eurofxref-graph-usd.en.html"
+    target="blank"
+  >
+    (
+    € 2
+    )
+  </a>
+</div>
+`;

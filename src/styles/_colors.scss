@@ -14,7 +14,8 @@ $pallete: (
 
 $colors: (
   body: (
-    background: map-get($pallete, 'seashell')
+    background: map-get($pallete, 'seashell'),
+    link-color: map-get($pallete, 'dark-slate-blue')
   ),
   input: (
     background: white,
@@ -34,7 +35,8 @@ $colors: (
     background: map-get($pallete, 'sunglow')
   ),
   grid: (
-    header-background: #eee
+    header-background: #eee,
+    hide-button-background: map-get($pallete, 'green-sheen')
   ),
   navbar: (
     background: map-get($pallete, 'platinate-purple')

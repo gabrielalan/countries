@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import ContainerCell from './ContainerCell';
 import ResizableHeader from './headers/ResizableHeader';
+import Icon from '../../presentational/icon/Icon';
+import { classNames } from '../../../functions/elementHelpers';
 
 /**
  * The Row isn't necessarily complex, so it is included
@@ -26,7 +28,7 @@ const createInitialDimensions = columnSpecs => Object.keys(columnSpecs).reduce(
  * that can connect different types of "visualization".
  * The type of cells for instance, can be changed quite easily.
  */
-export default function Grid({ indexColumn, columns, data }) {
+export default function Grid({ indexColumn, columns, data, onColumnHide, onColumnOrder }) {
   const [dimensions, setDimensions] = useState(createInitialDimensions(columns));
 
   const rowRenderer = createRowRenderer(columns, indexColumn, ContainerCell);
@@ -38,9 +40,17 @@ export default function Grid({ indexColumn, columns, data }) {
 
   const headers = Object.keys(columns).map(key => {
     const column = columns[key];
+    const hideButton = column.isHidable ? <button type="button" className="grid__row__column__hide-button" onClick={() => onColumnHide(key)}>✖</button> : null;
+    const orderIndicator = column.order ? <Icon className="grid__row__column__order" id={column.order === 'ASC' ? 'chevron-bottom' : 'chevron-top'} /> : null;
 
     return <ResizableHeader onResize={setColumnWidth(key)} initialWidth={column.width} key={key}>
-      <column.Type>{column.label}</column.Type>
+      <button type="button"
+        className={classNames({ 'grid__row__column__header-label': true, 'grid__row__column__header-label--is-orderable': column.isOrdarable })}
+        onClick={() => column.isOrdarable && onColumnOrder(key, column.order === 'ASC' ? 'DESC' : 'ASC')}>
+        {column.label}
+        {orderIndicator}
+      </button>
+      {hideButton}
     </ResizableHeader>;
   });
 
@@ -56,7 +66,7 @@ Grid.propTypes = {
   data: PropTypes.arrayOf(PropTypes.object).isRequired,
   indexColumn: PropTypes.string.isRequired,
   columns: PropTypes.objectOf(PropTypes.shape({
-    Type: PropTypes.func.isRequired,
+    Type: PropTypes.any.isRequired,
     width: PropTypes.number.isRequired,
     label: PropTypes.string.isRequired,
     hide: PropTypes.bool,
