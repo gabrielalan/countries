@@ -1,5 +1,10 @@
 [![Build Status](https://travis-ci.org/gabrielalan/countries.svg?branch=master)](https://travis-ci.org/gabrielalan/countries)
 
+## Supported browsers
+
+Due to the exercise purpose the only real supported browser is Chrome.
+The application will work in some greenfield browsers, but some of the features could not work properly.
+
 ## Features
 
 ### Redux + Saga + Router + GraphQl
