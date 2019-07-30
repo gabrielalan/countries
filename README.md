@@ -1,5 +1,10 @@
 [![Build Status](https://travis-ci.org/gabrielalan/countries.svg?branch=master)](https://travis-ci.org/gabrielalan/countries)
 
+## Deployed to
+
+The application is running in this URL: https://fancy-country-list.netlify.com/#/.
+If somehow the link is broken, you can always use the `deployment` script (see below).
+
 ## Supported browsers
 
 Due to the exercise purpose the only real supported browser is Chrome.
