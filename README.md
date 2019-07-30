@@ -33,6 +33,16 @@ The new column that is leading the order will be indicated via a "sort icon" in 
 The columns can also be removed in case the user doesn't want to see any kind of data.
 There is a button in each header that when activated will remove the column.
 
+### Remove reverter
+
+The grid also have a "reverter" for when the user removes one or more columns.
+The button will appear as soon as the user removes the first column, and it opens a modal, with a list of columns that the user removed of which it's possible to add back.
+
+### Search filter
+
+The only filter added at the moment is the search. It has the base to add more filters.
+It basically searchs by name and phone prefix. Continent is a possible new filter in the future, as a select filter.
+
 ### Different types of cells
 
 The grid accepts different types of data. At the moment there are 3 different types of "Cells".
