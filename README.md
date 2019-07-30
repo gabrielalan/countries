@@ -52,8 +52,14 @@ The grid accepts different types of data. At the moment there are 3 different ty
 
 ### Login 
 
-The Login is a simple feature that is working for now with the unsecure local storage method. 
-The user can register and login, all based on local storage only for the purpose of having a login/registration page.
+The Login is a simple feature that is working for now with the not-secure local storage method. 
+The user can register and login, all based on local storage only for the purpose of this exercise.
+
+Possible solutions for a more secure and production ready login:
+- [Auth0](https://auth0.com/opensource)
+- [Gluu](https://www.gluu.org/)
+- [Firebase Auth](https://firebase.google.com/docs/auth)
+- [Keycloak](https://www.keycloak.org/)
 
 ## Available Scripts
 
