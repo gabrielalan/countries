@@ -9,12 +9,14 @@ export const gridActionTypes = {
   setOrder: 'GRID_SET_ORDER',
   setColumns: 'GRID_SET_COLUMNS',
   hideColumn: 'GRID_HIDE_COLUMN',
+  showColumn: 'GRID_SHOW_COLUMN',
   loadData: 'GRID_LOAD_DATA',
   loadDataSucceeded: 'GRID_LOAD_DATA_SUCCEEDED',
   loadDataFailed: 'GRID_LOAD_DATA_FAILED',
 };
 
 export const createHideColumnAction = (name, id) => ({ type: gridActionTypes.hideColumn, name, id });
+export const createShowColumnAction = (name, id) => ({ type: gridActionTypes.showColumn, name, id });
 export const createSetPageAction = (name, page) => ({ type: gridActionTypes.setPage, page, name });
 export const createSetOrderAction = (name, id, order = 'ASC') => ({ type: gridActionTypes.setOrder, id, order, name });
 export const createSetColumnsAction = (name, columns) => ({ type: gridActionTypes.setColumns, columns, name });
@@ -37,7 +39,7 @@ const orderers = {
 };
 
 export default function gridsReducer(state = {}, action) {
-  let data, columns, currentColumnOrder;
+  let data, columns, column, currentColumnOrder;
 
   switch(action.type) {
     case gridActionTypes.loadData:
@@ -62,7 +64,16 @@ export default function gridsReducer(state = {}, action) {
       return set(`${action.name}.currentPage`, action.page, state);
 
     case gridActionTypes.setColumns:
-      return set(`${action.name}.columns`, action.columns, state);
+      return flow([
+        set(`${action.name}.originalColumns`, action.columns),
+        set(`${action.name}.columns`, action.columns),
+      ])(state);
+
+    case gridActionTypes.showColumn:
+      column = get(`${action.name}.originalColumns.${action.id}`, state)
+      columns = get(`${action.name}.columns`, state);
+
+      return set(`${action.name}.columns.${action.id}`, { ...column }, state);
 
     case gridActionTypes.hideColumn:
       columns = get(`${action.name}.columns`, state);

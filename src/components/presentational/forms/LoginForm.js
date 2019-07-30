@@ -40,7 +40,7 @@ export default function LoginForm({ onLogin, submitLabel, useRegisterButton }) {
       </div>
     </div>
     
-    <div className="align-center s-mt--6">
+    <div className="align--center s-mt--6">
       <button type="submit" className="btn btn--primary s-mr--2" disabled={hasErrors()}>{submitLabel}</button>
       {useRegisterButton ? <Link to="/register" className="btn btn--default--outline">register</Link> : null}
     </div>

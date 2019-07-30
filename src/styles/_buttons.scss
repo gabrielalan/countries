@@ -15,17 +15,8 @@
   border-radius: 50px;
   color: color('button', 'default');
   text-decoration: none;
+  position: relative;
   cursor: pointer;
-
-  &--iconed {
-    .btn__icon {
-      display: flex;
-
-      svg {
-        width: 1.75rem;
-      }
-    }
-  }
 
   @each $name, $color in map-get($colors, 'button') {
     &.btn--#{$name} {
@@ -63,5 +54,30 @@
       width: 30px;
       margin-right: 10px;
     }
+  }
+
+  &--iconed {
+    .btn__icon {
+      display: flex;
+
+      svg {
+        width: 1.75rem;
+      }
+    }
+  }
+
+  &--squared {
+    border-radius: 5px;
+  }
+
+  &--block {
+    display: flex;
+    width: 100%;
+  }
+
+  &--small {
+    font-size: 0.8rem;
+    padding: 0 1rem;
+    min-height: 30px;
   }
 }

@@ -46,6 +46,11 @@ $grid-count: 12;
     }
   }
 
+  &__item--animated {
+    transition: all .3s ease-in-out;
+    overflow: hidden;
+  }
+
   &--end {
     justify-content: flex-end;
   }
@@ -55,7 +60,7 @@ $grid-count: 12;
   }
 }
 
-@for $i from 1 through $grid-count {
+@for $i from 0 through $grid-count {
   .layout-grid__item--#{$i} {
     $width: percentage(($i / 12));
 
