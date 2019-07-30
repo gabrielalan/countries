@@ -63,7 +63,7 @@ Possible solutions for a more secure and production ready login:
 
 ## Available Scripts
 
-This project was created with [Create React App](https://github.com/facebook/create-react-app).
+This project was created with [Create React App](https://github.com/facebook/create-react-app) therefore using `npm` and `webpack`.
 
 ### `npm start`
 
