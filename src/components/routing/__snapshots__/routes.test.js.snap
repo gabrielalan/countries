@@ -1,9 +1,26 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`routes should render loading if its loading 1`] = `
-<p>
-  Loading
-</p>
+<div
+  className="s-mt--30"
+>
+  <div
+    className="loading"
+  >
+    <div
+      className="loading__icon"
+    >
+      <div />
+      <div />
+      <div />
+      <div />
+      <div />
+      <div />
+      <div />
+      <div />
+    </div>
+  </div>
+</div>
 `;
 
 exports[`routes should render pages correctly secured 1`] = `

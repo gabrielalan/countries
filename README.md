@@ -63,7 +63,7 @@ The grid accepts different types of data. At the moment there are 3 different ty
 ### Auth/Login 
 
 The authentication is implemented using [Firebase Auth](https://firebase.google.com/docs/auth).
-The `key` contained in this project (`auth/firebase.js`) has some limitations and for the exercise purpose it's commited together with the code, while in a real project if would obviously be in some secret environment variable or encapsulated by a backend API. Feel free to change it.
+The `key` contained in this project (`auth/firebase.js`) has some limitations and for the exercise purpose it's commited together with the code, while in a real project it would obviously be in some secret environment variable or encapsulated by a backend API. Feel free to change it.
 
 There is also a second option of auth adapter (check file `authentication.js`) that will use the localStorage to register and login the users. This is of course not secure and is only made for the purpose of this exercise.
 
