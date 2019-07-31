@@ -29,7 +29,7 @@ export default function ResizableHeader({ children, onResize, initialWidth }) {
    * onDragOver event, but that brings a lot of side-effects and is not a 
    * very performatic workaround.
    */
-  const onDrag = e => e.screenX > 0 && setResizedWidth(e.screenX);
+  const onDrag = e => e.pageX > 0 && setResizedWidth(e.pageX);
 
   const onDragEnd = () => {
     onResize(width);
@@ -44,7 +44,7 @@ export default function ResizableHeader({ children, onResize, initialWidth }) {
     const padRight = getStyleValue(div.current, 'padding-right');
 
     setInitials({
-      x: e.screenX,
+      x: e.pageX,
       width: div.current.getBoundingClientRect().width - (parseInt(padLeft) + parseInt(padRight))
     });
   };

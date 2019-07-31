@@ -45,16 +45,16 @@ describe('ResizableHeader', () => {
     renderer.act(() => {
       span.props.onDragStart({
         dataTransfer,
-        screenX: 50
+        pageX: 50
       });
     });
       
     renderer.act(() => {
-      span.props.onDrag({ screenX: 100 });
+      span.props.onDrag({ pageX: 100 });
     });
 
     renderer.act(() => {
-      span.props.onDragEnd({ screenX: 100 });
+      span.props.onDragEnd({ pageX: 100 });
     });
 
     expect(onResizeSpy).toBeCalledWith(150);
