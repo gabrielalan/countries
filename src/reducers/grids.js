@@ -58,7 +58,10 @@ export default function gridsReducer(state = {}, action) {
       ])(state);
 
     case gridActionTypes.setFilter:
-      return set(`${action.name}.filter`, action.filter, state);
+      return flow([
+        set(`${action.name}.filter`, action.filter),
+        set(`${action.name}.currentPage`, 0),
+      ])(state);
 
     case gridActionTypes.setPage:
       return set(`${action.name}.currentPage`, action.page, state);

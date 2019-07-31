@@ -8,7 +8,7 @@ export default function CurrencyRateCell({ rates, children }) {
     ? "https://www.ecb.europa.eu/stats/policy_and_exchange_rates/euro_reference_exchange_rates/html/index.en.html"
     : `https://www.ecb.europa.eu/stats/policy_and_exchange_rates/euro_reference_exchange_rates/html/eurofxref-graph-${children.toLowerCase()}.en.html`;
 
-  const rate = rates[children] ? `€ ${rates[children].toLocaleString(locale)}` : '--';
+  const rate = rates[children] ? `${rates[children].toLocaleString(locale)}` : '--';
 
   return <div className="currency-rate">
     {children} 
