@@ -1,5 +1,9 @@
 [![Build Status](https://travis-ci.org/gabrielalan/countries.svg?branch=master)](https://travis-ci.org/gabrielalan/countries)
 
+The project was runned with:
+- `npm` version: `6.9.0`
+- `node` version: `10.15.1`
+
 ## Deployed to
 
 The application is running in this URL: https://fancy-country-list.netlify.com/#/.
