@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Loading should render the required html structure 1`] = `
+<div
+  className="loading"
+>
+  <div
+    className="loading__icon"
+  >
+    <div />
+    <div />
+    <div />
+    <div />
+    <div />
+    <div />
+    <div />
+    <div />
+  </div>
+</div>
+`;

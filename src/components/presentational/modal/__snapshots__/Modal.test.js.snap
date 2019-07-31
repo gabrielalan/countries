@@ -1,0 +1,57 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Modal should render modal correctly 1`] = `
+<div
+  className="modal"
+>
+  <div
+    className="modal__content"
+  >
+    <div
+      className="modal__content__title"
+    >
+      <h1>
+        Title
+      </h1>
+      <button
+        className="btn btn--small btn--primary--outline btn--iconed"
+        onClick={
+          [MockFunction] {
+            "calls": Array [
+              Array [],
+            ],
+            "results": Array [
+              Object {
+                "type": "return",
+                "value": undefined,
+              },
+            ],
+          }
+        }
+        type="button"
+      >
+        <span
+          className="icon btn__icon"
+        >
+          <svg
+            aria-hidden="true"
+            className="icon__svg"
+            viewBox="0 0 10 10"
+          >
+            <use
+              xlinkHref="#icon-clear"
+            />
+          </svg>
+        </span>
+      </button>
+    </div>
+    <div
+      className="modal__content__body"
+    >
+      <p>
+        children
+      </p>
+    </div>
+  </div>
+</div>
+`;

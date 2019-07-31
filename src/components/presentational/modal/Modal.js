@@ -1,9 +1,10 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { createPortal } from 'react-dom';
+import PropTypes from 'prop-types';
 
 import Icon from '../icon/Icon';
 
-export default function Modal({ title, children, onClose }) {
+export default function Modal({ title, children, onClose, modalRoot }) {
   const container = <div className="modal">
     <div className="modal__content">
       <div className="modal__content__title">
@@ -18,5 +19,14 @@ export default function Modal({ title, children, onClose }) {
     </div>
   </div>;
 
-  return ReactDOM.createPortal(container, window.document.body);
+  return createPortal(container, modalRoot);
 }
+
+Modal.defaultProps = {
+  modalRoot: window.document.body
+};
+
+Modal.propTypes = {
+  title: PropTypes.string.isRequired,
+  onClose: PropTypes.func.isRequired,
+};

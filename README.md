@@ -71,6 +71,14 @@ The `key` contained in this project (`auth/firebase.js`) has some limitations an
 
 There is also a second option of auth adapter (check file `authentication.js`) that will use the localStorage to register and login the users. This is of course not secure and is only made for the purpose of this exercise.
 
+### Unit test
+
+The project has unit test included although only the most relevant components and code have it.
+
+There are some pieces of code that does *not* contain unit tests:
+- `api/` - These are only interfaces for authentication and the test would be only testing the 3rd part libs.
+- `containers/` - Usually containers are only high order components to connect the data coming from Redux. Although is good to test the containers as well, for this exercise I kept the tests in the presentational components mostly.
+
 ## Available Scripts
 
 This project was created with [Create React App](https://github.com/facebook/create-react-app) therefore using `npm` and `webpack`.

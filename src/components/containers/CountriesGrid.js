@@ -1,12 +1,11 @@
 import difference from 'lodash/fp/difference';
-import React, { useState } from 'react';
+import React from 'react';
 import { connect } from "react-redux";
 import { classNames } from '../../functions/elementHelpers';
 import Grid from '../presentational/grid/Grid';
-import Icon from '../presentational/icon/Icon';
-import Modal from '../presentational/modal/Modal';
 import SearchForm from '../presentational/forms/SearchForm';
 
+import Actions from '../presentational/grid/extra/Actions';
 import Loading from '../presentational/layout/Loading';
 import Pagination from '../presentational/pagination/Pagination';
 
@@ -24,8 +23,6 @@ const searchFilter = (search, data) => data.filter(country =>
 );
 
 export function CountriesGrid({ gridSpecs, loadData, hideColumn, showColumn, setFilter, setPage, setOrder }) {
-  const [modalIsOpen, setModalVisibility] = useState(false);
-
   if (!gridSpecs) {
     loadData();
     return <Loading />;
@@ -68,23 +65,13 @@ export function CountriesGrid({ gridSpecs, loadData, hideColumn, showColumn, set
     'layout-grid__item--medium-2': hiddenColumns.length,
   });
 
-  const showColumnModalAction = name => {
-    showColumn(name);
-    
-    if (hiddenColumns.length <= 1) {
-      setModalVisibility(false);
-    }
-  };
-
   return <>
     <div className="layout-grid">
       <div className={searchFormClasses}>
         <SearchForm onSubmit={search => setFilter({ search })} />
       </div>
       <div className={showColumnsClasses}>
-        <button type="button" className="btn btn--squared btn--block btn--warning btn--iconed s-ml--2" onClick={() => setModalVisibility(true)}>
-          <Icon id="more" className="btn__icon" />
-        </button>
+        <Actions hiddenColumns={hiddenColumns} showColumn={showColumn} />
       </div>
     </div>
 
@@ -103,20 +90,6 @@ export function CountriesGrid({ gridSpecs, loadData, hideColumn, showColumn, set
         limit={limit}
         onChange={setPage} />
     </div>
-
-    {modalIsOpen ? <Modal title="Extra grid actions" onClose={() => setModalVisibility(false)}>
-      Add back the columns that you've hide before:
-      <hr />
-      {hiddenColumns.map(
-        name => <button
-          key={name}
-          type="button"
-          className="btn btn--secondary btn--small s-mr--2"
-          onClick={() => showColumnModalAction(name)}>
-          {name}
-        </button>
-      )}
-    </Modal> : null}
   </>;
 }
 
