@@ -26,8 +26,8 @@ export default function LoginForm({ onLogin, submitLabel, useRegisterButton }) {
   return <form action="#" onSubmit={handleSubmit}>
     <div className="form-column-groups s-mt--6">
       <div className={`form-group ` + (!!user.errors.length && user.changed ? 'form-group--invalid' : '')}>
-        <label htmlFor="username" className="form-group__label">Username</label>
-        <input id="username" type="text" className="form-group__input" autoComplete="off"
+        <label htmlFor="username" className="form-group__label">Email</label>
+        <input id="username" type="email" className="form-group__input" autoComplete="off"
           value={user.value} onBlur={e => !user.changed && setUser(e.target.value)} onChange={e => setUser(e.target.value)} />
         <span className="form-group__error">!</span>
       </div>

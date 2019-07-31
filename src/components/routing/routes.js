@@ -1,6 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
+import Loading from '../presentational/layout/Loading';
+
 function withSecurity(authenticated, Route, Redirect) {
   const createRenderer = (Component, isPrivate) => props =>
     !isPrivate || authenticated ? (
@@ -23,7 +25,9 @@ export function Routes({isUserLoggedIn, isAppLoading, Router, Route, Redirect, S
   const SecuredRoute = withSecurity(isUserLoggedIn, Route, Redirect);
 
   if (isAppLoading) {
-    return <p>Loading</p>;
+    return <div className="s-mt--30">
+      <Loading />
+    </div>;
   }
 
   return <Router>

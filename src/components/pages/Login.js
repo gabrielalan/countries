@@ -2,12 +2,17 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Link, Redirect } from 'react-router-dom';
 import LoginForm from '../presentational/forms/LoginForm';
+import Loading from '../presentational/layout/Loading';
 
 const ErrorMessage = () => <p className="alert">
-  Username not found. If you don't have an account you can <Link to="register">register clicking the button</Link> below.
+  Email not found. If you don't have an account you can <Link to="register">register clicking the button</Link> below.
 </p>;
 
-function Home({ isUserLoggedIn, error, performLogin }) {
+function Home({ isUserLoggedIn, checkingLogin, error, performLogin }) {
+  if (checkingLogin) {
+    return <Loading />
+  }
+
   if (isUserLoggedIn) {
     return <Redirect to="/" />
   }
@@ -24,6 +29,7 @@ function Home({ isUserLoggedIn, error, performLogin }) {
 }
 
 const mapStateToProps = state => ({
+  checkingLogin: state.user.checkingLogin,
   isUserLoggedIn: !!state.user.loggedInUser,
   error: state.user.loginError
 });

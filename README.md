@@ -60,16 +60,12 @@ The grid accepts different types of data. At the moment there are 3 different ty
 - `CurrencyRateCell` - will treat the content as a currency KEY and try to get the current rate to show alogn with the key. To use it standalone you will need to pass the `rates` list, but that is covered by using the "container" `CurrencyRate`.
 - `PrimitiveListCell` - a Cell used more for compositions. It will treat the content as a list of any primitive values and render each one with a another given type of Cell (TextCell, CurrencyRateCell... etc)
 
-### Login 
+### Auth/Login 
 
-The Login is a simple feature that is working for now with the not-secure local storage method. 
-The user can register and login, all based on local storage only for the purpose of this exercise.
+The authentication is implemented using [Firebase Auth](https://firebase.google.com/docs/auth).
+The `key` contained in this project (`auth/firebase.js`) has some limitations and for the exercise purpose it's commited together with the code, while in a real project if would obviously be in some secret environment variable or encapsulated by a backend API. Feel free to change it.
 
-Possible solutions for a more secure and production ready login:
-- [Auth0](https://auth0.com/opensource)
-- [Gluu](https://www.gluu.org/)
-- [Firebase Auth](https://firebase.google.com/docs/auth)
-- [Keycloak](https://www.keycloak.org/)
+There is also a second option of auth adapter (check file `authentication.js`) that will use the localStorage to register and login the users. This is of course not secure and is only made for the purpose of this exercise.
 
 ## Available Scripts
 

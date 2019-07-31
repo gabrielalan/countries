@@ -1,11 +1,13 @@
 import { call, takeLatest, put } from "@redux-saga/core/effects";
-import { authenticateUser, getAuthenticatedUser, registerUser, logUserOut } from "../api/users/authentication";
+import authentication from "../api/users/authentication";
+
+const { authenticateUser, getAuthenticatedUser, registerUser, logUserOut } = authentication;
 
 function* checkUserLogin() {
   let user;
 
   try {
-    user = yield call(getAuthenticatedUser, window.localStorage);
+    user = yield call(getAuthenticatedUser);
   } catch(e) {
     // no user logged in
   } finally {
@@ -15,7 +17,7 @@ function* checkUserLogin() {
 
 function* performUserLogin(action) {
   try {
-    const user = yield call(authenticateUser, window.localStorage, action.user);
+    const user = yield call(authenticateUser, action.user);
 
     yield put({ type: 'USER_LOGIN_SUCCEEDED', user: user });
   } catch(e) {
@@ -25,7 +27,7 @@ function* performUserLogin(action) {
 
 function* performRegistration(action) {
   try {
-    const user = yield call(registerUser, window.localStorage, action.user);
+    const user = yield call(registerUser, action.user);
 
     yield put({ type: 'USER_REGISTER_SUCCEEDED', user: user });
   } catch(e) {
@@ -35,7 +37,7 @@ function* performRegistration(action) {
 
 function* performLogOut() {
   try {
-    yield call(logUserOut, window.localStorage);
+    yield call(logUserOut);
     yield put({ type: 'USER_LOGOUT_SUCCEEDED' });
   } catch(e) {
     yield put({ type: 'USER_LOGOUT_FAILED', message: e.message });

@@ -16,7 +16,7 @@
     $shortType: 'm';
   }
 
-  @for $i from 0 through 20 {
+  @for $i from 0 through 30 {
     $_value: $i * $baseWhitespace;
 
     .s-#{$shortType}#{$shortDirection}--#{$i}#{$_suffix} {

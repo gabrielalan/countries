@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "apollo-boost": "^0.4.3",
+    "firebase": "^6.3.3",
     "graphql": "^14.4.2",
     "lodash": "^4.17.15",
     "node-sass": "^4.12.0",
