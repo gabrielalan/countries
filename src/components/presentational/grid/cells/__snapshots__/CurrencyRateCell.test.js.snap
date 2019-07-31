@@ -26,7 +26,7 @@ exports[`CurrencyRateCell should render the rate together with the currency 1`] 
     target="blank"
   >
     (
-    € 2
+    2
     )
   </a>
 </div>
